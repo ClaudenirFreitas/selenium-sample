@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.freitas'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+	testImplementation 'org.testcontainers:selenium:1.19.5'
+	testImplementation 'org.seleniumhq.selenium:selenium-java:4.17.0'
+	testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.17.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
